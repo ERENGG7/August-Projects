@@ -1,0 +1,33 @@
+using Microsoft.VisualBasic;
+using System;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Threading.Channels;
+using System.Linq;
+using System.Numerics;
+
+namespace Grades
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            var grades = new Dictionary<string, List<int>>();
+            grades["Pesho"] = new List<int>() { 5, 6, 6 };
+            grades["Bojo"] = new List<int>() { 5 };
+            grades["Maria"] = new List<int>() { 6, 6 };
+            foreach (var g in grades)
+            {
+               string currentGrades = string.Join(" ,",g.Value);
+                Console.WriteLine($"{g.Key} has the following grades: {currentGrades}");
+            }
+
+
+
+        }
+
+    }
+
+}
+
