@@ -1,0 +1,51 @@
+using System;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Threading.Channels;
+using System.Linq;
+using System.Numerics;
+using System.Collections.Generic;
+
+namespace Country,Town,Population
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            var countries = new Dictionary<string, Dictionary<string, int>>();
+            countries["Albania"] = new Dictionary<string, int>()
+            {
+
+            { "Tirana", 500000 },
+            { "Durres", 100000 }
+
+            };
+            countries["Bulgaria"] = new Dictionary<string, int>()
+            {
+                {"Sofia",1500000 },
+                {"Plovdiv",300000 }
+
+            };
+            countries["Romania"] = new Dictionary<string, int>()
+            {
+                {"Bucharest",2000000 },
+                {"Cluj-napoca",600000 }
+            };
+            foreach (var country in countries)
+            {
+                Console.WriteLine(country.Key + ":");
+                foreach(var city in country.Value)
+                {
+                    Console.WriteLine($"{city.Key}->{city.Value}");
+                }
+            }
+
+
+
+
+        }
+
+    }
+
+}
