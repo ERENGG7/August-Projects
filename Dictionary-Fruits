@@ -1,0 +1,42 @@
+using Microsoft.VisualBasic;
+using System;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Threading.Channels;
+using System.Linq;
+using System.Numerics;
+
+namespace ListOfFruits
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            var fruitPrices = new Dictionary<string, double>();
+            fruitPrices["banana"] = 2.40;
+            fruitPrices["orange"] = 3.50;
+            fruitPrices["apple"] = 3.20;
+            fruitPrices["grapes"] = 3.20;
+            fruitPrices.Add("mango", 12.00);
+            foreach (var f in fruitPrices)
+            {
+                Console.WriteLine(f.Key + " costs " + f.Value);
+            }
+            Console.WriteLine("List of fruits: ");
+            Console.WriteLine(String.Join(", ", fruitPrices.Keys));
+
+            var sortetFruits = fruitPrices
+                .OrderBy(f => f.Value)
+                .ThenBy( f=> f.Key );
+            foreach (var f in sortetFruits)
+            {
+                Console.WriteLine($"{f.Key} -> {f.Value:f2}");
+            }
+            
+        }
+
+    }
+
+}
+
