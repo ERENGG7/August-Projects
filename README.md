@@ -10,7 +10,7 @@ using System.Numerics;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace BORNOSUZOV.HATE.PAGE
+namespace Cars
 {
     class Program
     {
