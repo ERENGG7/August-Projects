@@ -1,0 +1,74 @@
+namespace OLYMPIADE
+{
+
+    class mathOlympiade
+    {
+        static void Main(string[] args)
+        {
+            // Town - Plovdiv, Name - Petar, Grades - 33
+           
+            var participants = new Dictionary<string, Dictionary<string, List<int>>>();
+            //Sofia
+            participants["Sofia"] = new Dictionary<string, List<int>>()
+            {
+                ["Petar"]=new List<int>() {6,6,5 },
+                ["Ana"] = new List<int> {6,6,6},
+                ["Maria"] = new List<int>() {6,6,5},
+            };
+            //Plovdiv
+            participants["Plovdiv"] = new Dictionary<string, List<int>>()
+            {
+                ["Angel"] = new List<int>() { 6, 5, 5 },
+                ["Viktor"] = new List<int>() { 6, 6, 5 },
+                ["Ivana"] = new List<int>() { 6, 6, 5 }
+
+            };
+            //Varna
+            participants["Varna"] = new Dictionary<string, List<int>>()
+            {
+                ["Nikolay"] = new List<int>() { 6, 6, 6 },
+                ["Ana"] = new List<int>() { 6, 6, 6 },
+                ["Tsvetan"] = new List<int>() { 6, 6, 5 }
+
+            };
+            //Burgas
+            participants["Burgas"] = new Dictionary<string, List<int>>()
+            {
+                ["Polina"] = new List<int>() { 6, 6, 6 },
+                ["Olga"] = new List<int>() { 6, 6, 6 },
+                ["Vladislav"] = new List<int>() { 6, 6, 6 }
+
+            };
+            //Ruse
+            participants["Ruse"] = new Dictionary<string, List<int>>()
+            {
+                ["Rumen"] = new List<int>() { 6, 6, 6 },
+                ["Tervel"] = new List<int>() { 6, 5, 6 },
+                ["Branimira"] = new List<int>() { 5, 6, 6 }
+
+            };
+            //Stara Zagora
+            participants["Stara Zagora"] = new Dictionary<string, List<int>>()
+            {
+                ["Yoan"] = new List<int>() { 6, 6, 6 },
+                ["Aleksandar"] = new List<int>() { 6, 5, 6 },
+                ["Mihail"] = new List<int>() { 5, 6, 6 }
+
+            };
+            foreach (var town in participants)
+            {
+                Console.WriteLine( town.Key + ":");
+                foreach (var participant in town.Value)
+                {
+
+                    Console.WriteLine($"  {participant.Key} ->{string.Join(", ",participant.Value)}");
+
+                }
+                            
+            }
+            Console.ReadKey();
+        }
+
+    }
+
+}
