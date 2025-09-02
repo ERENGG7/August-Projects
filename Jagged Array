@@ -1,0 +1,38 @@
+using Microsoft.VisualBasic;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.Linq;
+using System.Numerics;
+using System.Runtime.InteropServices;
+using System.Threading.Channels;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace X
+{
+
+    class LuckyDuo
+    {
+        static void Main(string[] args)
+        {
+            int rowsCount =int.Parse(Console.ReadLine());
+            int[][]jagged = new int[rowsCount][];
+            for (int row = 0; row < rowsCount; row++)
+            {
+                jagged[row] = Console.ReadLine()
+                    .Split(' ')
+                    .Select(int.Parse)
+                    .ToArray();
+            }
+            Console.WriteLine("The array is:");
+            foreach (var row in jagged)
+            {
+                Console.WriteLine(string.Join(", ",row));
+            }
+        }
+
+    }
+
+}
